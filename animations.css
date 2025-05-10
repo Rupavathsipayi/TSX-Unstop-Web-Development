@@ -1,0 +1,286 @@
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Left Animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade In Right Animation */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Fade In Up Staggered Animation for Skills */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animations */
+.home-content {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.home-image {
+    animation: fadeInLeft 1s ease-out 0.3s forwards;
+}
+
+.home-text {
+    animation: fadeInRight 1s ease-out 0.3s forwards;
+}
+
+.social-links {
+    animation: fadeIn 1s ease-out 0.6s forwards;
+}
+
+.section-title {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.about-text {
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.about-image {
+    animation: fadeInRight 1s ease-out forwards;
+}
+
+.skill-category {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.project-card, .cert-card, .timeline-content, .contact-form {
+    animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* Animation delays for staggered effect */
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+.skill-category:nth-child(4) { animation-delay: 0.4s; }
+.skill-category:nth-child(5) { animation-delay: 0.5s; }
+.skill-category:nth-child(6) { animation-delay: 0.6s; }
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.3s; }
+
+.cert-card:nth-child(1) { animation-delay: 0.1s; }
+.cert-card:nth-child(2) { animation-delay: 0.2s; }
+.cert-card:nth-child(3) { animation-delay: 0.3s; }
+.cert-card:nth-child(4) { animation-delay: 0.4s; }
+.cert-card:nth-child(5) { animation-delay: 0.5s; }
+
+.timeline-item:nth-child(1) .timeline-content { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) .timeline-content { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) .timeline-content { animation-delay: 0.5s; }
+
+/* Hover Effects */
+.experience-card:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Skill Icons Animation */
+.skill-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: rotate(10deg) scale(1.1);
+    background-color: var(--secondary-color);
+}
+
+/* Project Cards Hover Effect */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Timeline Item Hover Effect */
+.timeline-content {
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(5px);
+}
+
+/* Button Hover Animation */
+.btn {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    height: 100%;
+}
+
+/* Social Links Hover Animation */
+.social-links a {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) rotate(5deg);
+}
+
+/* Animation Classes */
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 1s ease-out forwards;
+}
+
+.animate-zoomIn {
+    animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* Mobile Menu Animation */
+.menu-btn {
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Logo Animation */
+.logo a {
+    position: relative;
+    display: inline-block;
+}
+
+.logo a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.logo a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Initial State for Animation */
+.skill-category, .project-card, .cert-card, .timeline-content, .contact-form {
+    opacity: 0;
+}
+
+.home-image, .home-text, .about-text, .about-image {
+    opacity: 0;
+}
+
+/* Skill Progress Bar Animation */
+.progress-bar .progress[data-percent="70"] {
+    width: 70%;
+}
+
+.progress-bar .progress[data-percent="75"] {
+    width: 75%;
+}
+
+.progress-bar .progress[data-percent="80"] {
+    width: 80%;
+}
+
+.progress-bar .progress[data-percent="85"] {
+    width: 85%;
+}
+
+.progress-bar .progress[data-percent="90"] {
+    width: 90%;
+}
+
+/* Profile Image Animation */
+.profile-image {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.home-image:hover .profile-image {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
